@@ -186,6 +186,7 @@ export class MprisPlayer extends Service {
         // Dirty Fix to fix covers from Cider
         if (this.identity == "Cider")
             trackCoverUrl = trackCoverUrl.replace("{f}", "png")
+            metadata['mpris:artUrl'] = trackCoverUrl
 
         let length = metadata['mpris:length'];
         length = typeof length === 'number' ? length / 1_000_000 : -1;
